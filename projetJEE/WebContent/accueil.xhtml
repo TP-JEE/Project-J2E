@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+<h:head>
+  <title>Ajiw Nsafrou Majmo3in -Accueil</title>
+</h:head>
+
+<h:body>
+<h:form>
+    	Ajiw Nsafrou Majmo3in
+    	<p:commandButton value="Se Connecter" id="connecter" action="myresponse" style="margin-left:400px;" ajax="false" />
+    	<p:commandButton value="S'enregistrer" id="enregistrer" action="myresponse" style="margin-left:20px;" ajax="false" />
+</h:form>
+
+<br></br>
+<br></br>
+<br></br>
+
+<h:form>
+<p:tabMenu activeIndex="0">
+    <p:menuitem value="Propositions de Voyages" outcome="/accueil" icon="pi pi-star" fragment="">
+     <f:param name="i" value="0" />
+    </p:menuitem>
+    <p:menuitem value="A propos du Site" outcome="/accTab1" icon="pi pi-file">
+     <f:param name="i" value="1" />
+    </p:menuitem>
+    <p:menuitem value="Souvenirs Partages" outcome="/accTab2" icon="pi pi-user">
+        <f:param name="i" value="2" />
+    </p:menuitem>
+</p:tabMenu>
+</h:form>
+
+<h:form>      
+    <p:panel id="panel" header="Chercher des propositions" style="margin-bottom:10px;">
+        <p:messages id="messages" />
+        <h:panelGrid columns="4" cellpadding="5">
+        
+            <h:outputLabel for="txt1" value="Mots Cles" />
+            <p:inputText id="txt1" value="#{searchView.text1}" required="true" label="Text">
+                <f:validateLength minimum="0" />
+            </p:inputText>
+            
+            <h:outputLabel for="txt2" value="Nb Max de personnes" />
+            <p:inputText id="txt2" value="#{searchView.text1}" required="true" label="Text">
+                <f:validateLength minimum="0" />
+            </p:inputText>
+            
+            <h:outputLabel for="txt3" value="Duree de Voyage (en jours)" />
+            <p:inputText id="txt3" value="#{searchView.text1}" required="true" label="Text">
+                <f:validateLength minimum="0" />
+            </p:inputText>
+            
+            <h:outputLabel for="filtre1" value="Ville de Depart" />
+            <h:selectOneMenu id="filtre1" value="#{searchView.text2}" required="true" label="Text 2">
+                <f:selectItem itemLabel="Select One" itemValue="" noSelectionOption="true" />
+                <f:selectItem itemLabel="Tanger" itemValue="1" />
+                <f:selectItem itemLabel="Ifran" itemValue="2" />
+                <f:selectItem itemLabel="Marrakech" itemValue="3" />
+            </h:selectOneMenu>
+             <h:outputLabel for="date" value="Date De depart" />
+            <p:calendar id="date" value="#{calendarView.date3}" showOn="button" />
+            
+            <h:outputLabel for="filtre2" value="Ville Visitee" />
+            <h:selectOneMenu id="filtre2" value="#{searchView.text2}" required="true" label="Text 2">
+                <f:selectItem itemLabel="Select One" itemValue="" noSelectionOption="true" />
+                <f:selectItem itemLabel="Tanger" itemValue="1" />
+                <f:selectItem itemLabel="Ifran" itemValue="2" />
+                <f:selectItem itemLabel="Marrakech" itemValue="3" />
+            </h:selectOneMenu>
+            
+           <h:outputLabel for="filtre3" value="Moyen de Transport" />
+            <h:selectOneMenu id="filtre3" value="#{searchView.text2}" required="true" label="Text 2">
+                <f:selectItem itemLabel="Select One" itemValue="" noSelectionOption="true" />
+                <f:selectItem itemLabel="Train" itemValue="1" />
+                <f:selectItem itemLabel="Vol" itemValue="2" />
+                <f:selectItem itemLabel="Car" itemValue="3" />
+                <f:selectItem itemLabel="Voiture" itemValue="4" />
+            </h:selectOneMenu>
+            
+        </h:panelGrid>
+    </p:panel>
+ 
+    <h:panelGrid columns="2">
+        <p:commandButton value="Search" id="search" action="myresponse" style="margin-right:20px;" ajax="false" />
+    </h:panelGrid>
+</h:form>
+
+<h:form>
+<p:panel id="prop1" header="Proposition de voyage 1" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="WebContent/img1.jpg" />
+                <h:outputText value="description du proposition 1" />
+            </h:panelGrid>
+        <f:facet name="actions">
+            <h:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"><h:outputText styleClass="ui-icon pi pi-question" /></h:commandLink>
+            <h:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"><h:outputText styleClass="ui-icon pi pi-star" /></h:commandLink>
+        </f:facet>
+    </p:panel>
+<p:panel id="prop2" header="Proposition de voyage 2" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="WebContent/img1.jpg" />
+                <h:outputText value="description du proposition 2" />
+            </h:panelGrid>
+        <f:facet name="actions">
+            <h:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"><h:outputText styleClass="ui-icon pi pi-question" /></h:commandLink>
+            <h:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"><h:outputText styleClass="ui-icon pi pi-star" /></h:commandLink>
+        </f:facet>
+    </p:panel>
+<p:panel id="prop3" header="Proposition de voyage 3" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+                <p:graphicImage name="WebContent/img1.jpg" />
+                <h:outputText value="description du proposition 2" />
+            </h:panelGrid>
+        <f:facet name="actions">
+            <h:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"><h:outputText styleClass="ui-icon pi pi-question" /></h:commandLink>
+            <h:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"><h:outputText styleClass="ui-icon pi pi-star" /></h:commandLink>
+        </f:facet>
+    </p:panel>
+  </h:form>
+</h:body>
+
+
+</html>
